@@ -99,8 +99,12 @@ export default function CalmeeApp() {
       audioManager.pause(key)
       setMeditationPlaying(null)
     } else {
-      // Stop all soundscapes
-      setSoundscapePlaying(null)
+      // Stop all soundscapes first
+      if (soundscapePlaying !== null) {
+        const soundscapeKeys: AudioKey[] = ['ambiente_rain', 'ambiente_ocean', 'ambiente_wind', 'ambiente_piano', 'ambiente_birds', 'ambiente_water', 'ambiente_fireplace', 'ambiente_bowl', 'ambiente_whitenoise', 'ambiente_underwater']
+        audioManager.pause(soundscapeKeys[soundscapePlaying])
+        setSoundscapePlaying(null)
+      }
       
       // If another meditation is playing, crossfade
       if (meditationPlaying !== null) {
@@ -124,8 +128,21 @@ export default function CalmeeApp() {
       audioManager.pause(key)
       setSoundscapePlaying(null)
     } else {
-      // Stop all meditations
-      setMeditationPlaying(null)
+      // Stop all meditations first
+      if (meditationPlaying !== null) {
+        const meditationKeys: AudioKey[] = [
+          'medit_crise', 
+          'medit_dormir', 
+          'medit_ansiedade', 
+          'medit_profunda', 
+          'medit_ambiente',
+          'medit_30s', 
+          'medit_60s', 
+          'medit_90s'
+        ]
+        audioManager.pause(meditationKeys[meditationPlaying])
+        setMeditationPlaying(null)
+      }
       
       // If another soundscape is playing, crossfade
       if (soundscapePlaying !== null) {
