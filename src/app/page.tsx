@@ -819,13 +819,6 @@ export default function CalmeeApp() {
             <p className="text-lg font-light text-[#9CA3AF]">Momentos curtos de paz</p>
           </div>
 
-          {/* Info message */}
-          <div className="bg-[#A78BFA]/10 rounded-3xl p-4 text-center">
-            <p className="text-sm font-light text-[#6B7280]">
-              💡 Coloque seus arquivos de áudio em <code className="bg-white/50 px-2 py-1 rounded text-xs">/public/assets/sounds/meditacoes/</code>
-            </p>
-          </div>
-
           <div className="space-y-4">
             {meditations.map((med, i) => (
               <div key={i} className="bg-white/60 backdrop-blur-sm rounded-3xl p-6 shadow-lg">
@@ -938,13 +931,6 @@ export default function CalmeeApp() {
             <p className="text-lg font-light text-[#9CA3AF]">Sons ambientes relaxantes</p>
           </div>
 
-          {/* Info message */}
-          <div className="bg-[#7DD3FC]/10 rounded-3xl p-4 text-center">
-            <p className="text-sm font-light text-[#6B7280]">
-              💡 Coloque seus arquivos de áudio em <code className="bg-white/50 px-2 py-1 rounded text-xs">/public/assets/sounds/ambientes/</code>
-            </p>
-          </div>
-
           <div className="grid grid-cols-2 gap-4">
             {soundscapes.map((sound, i) => (
               <button 
@@ -953,7 +939,7 @@ export default function CalmeeApp() {
                 className={`relative aspect-square w-full bg-gradient-to-br ${sound.color} rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col items-center justify-center space-y-3 ${soundscapePlaying === i ? 'ring-4 ring-white/50 scale-105' : ''}`}
               >
                 <div className="text-white">{sound.icon}</div>
-                <span className="text-white font-light text-base text-center px-2">{sound.title}</span>
+                <span className="text-white font-semibold text-base text-center px-2">{sound.title}</span>
               </button>
             ))}
           </div>
@@ -1273,7 +1259,7 @@ function ToolCard({ icon, title, color, onClick }: any) {
       className={`bg-gradient-to-br ${color} rounded-3xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col items-center justify-center space-y-3 aspect-square`}
     >
       <div className="text-white">{icon}</div>
-      <span className="text-white font-light text-base">{title}</span>
+      <span className="text-white font-semibold text-base">{title}</span>
     </button>
   )
 }
@@ -1285,7 +1271,7 @@ function FeatureCard({ icon, title, color, onClick }: any) {
       className={`bg-gradient-to-br ${color} rounded-3xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col items-center justify-center space-y-3 aspect-square`}
     >
       <div className="text-white">{icon}</div>
-      <span className="text-white font-light text-base">{title}</span>
+      <span className="text-white font-semibold text-base">{title}</span>
     </button>
   )
 }
@@ -1470,7 +1456,7 @@ function NavItem({ icon, label, active, onClick }: any) {
       className={`flex flex-col items-center gap-1 transition-all duration-300 ${active ? 'text-[#A78BFA]' : 'text-[#9CA3AF]'}`}
     >
       <div className="w-6 h-6">{icon}</div>
-      <span className="text-xs font-light">{label}</span>
+      <span className="text-xs font-semibold">{label}</span>
     </button>
   )
 }
