@@ -1,11 +1,17 @@
 import { useState } from "react";
 
-export default function AudioPlayer() {
-  const sounds = {
-    chuva: "/assets/sounds/ambientes/chuva.mp3",
-    vento: "/assets/sounds/ambientes/vento.mp3",
-    meditacao1: "/assets/sounds/ambientes/meditacao1.mp3",
-  };
+const sounds = {
+  aguacorrente: "/assets/sounds/ambientes/aguacorrente.mp3",
+  chuvasuave: "/assets/sounds/ambientes/chuvasuave.mp3",
+  lareira: "/assets/sounds/ambientes/lareira.mp3",
+  notasdepiano: "/assets/sounds/ambientes/notasdepiano.mp3",
+  passaros: "/assets/sounds/ambientes/passaros.mp3",
+  somsubaquatico: "/assets/sounds/ambientes/somsubaquatico.mp3",
+  tacatibetana: "/assets/sounds/ambientes/tacatibetana.mp3",
+  ventosuave: "/assets/sounds/ambientes/ventosuave.mp3",
+  whitenoise: "/assets/sounds/ambientes/whitenoise.mp3"
+};
+
 
   const [audio, setAudio] = useState(null);
 
